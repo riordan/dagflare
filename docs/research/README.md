@@ -32,6 +32,8 @@ The full evidence and qualifications are in the [Basin assessment](cloudflare-ba
 
 Follow-up research found [existing dbt-to-R2 Data Catalog support and a Cloudflare Sandbox runner](dbt-basin-existing-work.md). The upstream Rust dbt v2 integration has collaborator-reported live verification; it is distinct from the installed Python dbt stack. Evaluate this existing path before building an adapter.
 
+[Pipeline write semantics and the two project scopes](basin-pipelines-write-semantics.md) make Basin Pipelines a core continuous-ingestion primitive for Dagflare while distinguishing stream insertion from dbt warehouse materializations. The proposed `dbt-cloudflare-basin` integration should work independently of Dagflare. Native Pipeline upsert/delete behavior is not documented; append-only change events and logical current-state queries are a separate, explicitly defined option.
+
 ## Recommended direction
 
 Build a Cloudflare-native control application around a stable asset graph. Use a Worker for UI/API, D1 for searchable metadata and run projections, R2 for definition snapshots and artifacts, Workflows for durable execution coordination, and a Durable Object for admission and scheduling coordination where necessary. Use Basin for analytics data. A container runner is a proposed adapter for Python/dbt workloads inside the same team's account.

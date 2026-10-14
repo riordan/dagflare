@@ -34,7 +34,7 @@ Follow-up research found [existing dbt-to-R2 Data Catalog support and a Cloudfla
 
 [Pipeline write semantics and the two project scopes](basin-pipelines-write-semantics.md) make Basin Pipelines a core continuous-ingestion primitive for Dagflare while distinguishing stream insertion from dbt warehouse materializations. The proposed `dbt-cloudflare-basin` integration should work independently of Dagflare. Native Pipeline upsert/delete behavior is not documented; append-only change events and logical current-state queries are a separate, explicitly defined option.
 
-The [October 14 limitations review](basin-limitations-2026-10-14.md) rechecks current official sources and consolidates Pipeline quotas and change semantics with Basin SQL's read-only boundary, supported query features, dialect gaps, result bounds, and resource budgets.
+The [short limitations summary](basin-limitations-summary.md) is the quick introduction. The [October 14 limitations review](basin-limitations-2026-10-14.md) rechecks current official sources and consolidates Pipeline quotas and change semantics with Basin SQL's read-only boundary, supported query features, dialect gaps, result bounds, and resource budgets.
 
 ## Recommended direction
 
